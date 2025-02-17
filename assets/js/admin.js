@@ -161,9 +161,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Cria um card para cada banco
         bancos.forEach(banco => {
             const card = `
-                <div class="col-md-6 col-xl-3 mb-4 card_dados">
-                    <div class="card shadow border-left-warning
-py-2">
+                <div class="col-md-6 col-xl-4 mb-4">
+                    <div class="card shadow border-left-primary py-2">
                         <div class="card-body">
                             <div class="row g-0 align-items-center">
                                 <div class="col me">
@@ -650,6 +649,94 @@ py-2">
     // Atualizar a página ao clicar em "Close"
     document.getElementById('btn-close-bank').addEventListener('click', () => {
       window.location.href = 'index.html'; // Atualiza a página
+    });
+    
+    // Função para buscar o total de receitas
+    async function fetchTotalReceitas(dataSelecionada) {
+      let query = supabase
+        .from('transactions')
+        .select('amount')
+        .eq('type', 'receita');
+
+      if (dataSelecionada) {
+        // Filtra por data específica
+        query = query.eq('date', dataSelecionada);
+      } else {
+        // Filtra pelo mês corrente
+        const hoje = new Date();
+        const primeiroDiaMes = new Date(hoje.getFullYear(), hoje.getMonth(), 1).toISOString().split('T')[0];
+        const ultimoDiaMes = new Date(hoje.getFullYear(), hoje.getMonth() + 1, 0).toISOString().split('T')[0];
+        query = query.gte('date', primeiroDiaMes).lte('date', ultimoDiaMes);
+      }
+
+      const { data, error } = await query;
+
+      if (error) {
+        console.error('Erro ao buscar receitas:', error);
+        return 0;
+      }
+
+      // Soma os valores das receitas
+      const totalReceitas = data.reduce((total, transacao) => total + (transacao.amount || 0), 0);
+      return totalReceitas;
+    }
+
+    // Função para buscar o total de despesas
+    async function fetchTotalDespesas(dataSelecionada) {
+      let query = supabase
+        .from('transactions')
+        .select('amount')
+        .eq('type', 'despesa');
+
+      if (dataSelecionada) {
+        // Filtra por data específica
+        query = query.eq('date', dataSelecionada);
+      } else {
+        // Filtra pelo mês corrente
+        const hoje = new Date();
+        const primeiroDiaMes = new Date(hoje.getFullYear(), hoje.getMonth(), 1).toISOString().split('T')[0];
+        const ultimoDiaMes = new Date(hoje.getFullYear(), hoje.getMonth() + 1, 0).toISOString().split('T')[0];
+        query = query.gte('date', primeiroDiaMes).lte('date', ultimoDiaMes);
+      }
+
+      const { data, error } = await query;
+
+      if (error) {
+        console.error('Erro ao buscar despesas:', error);
+        return 0;
+      }
+
+      // Soma os valores das despesas
+      const totalDespesas = data.reduce((total, transacao) => total + (transacao.amount || 0), 0);
+      return totalDespesas;
+    }
+
+    // Atualiza a interface com os valores totais formatados
+    async function atualizarTotais() {
+      const dataSelecionada = document.getElementById('dataSelecionada').value;
+
+      // Busca os totais
+      const totalReceitas = await fetchTotalReceitas(dataSelecionada);
+      const totalDespesas = await fetchTotalDespesas(dataSelecionada);
+
+      // Formata os valores como moeda brasileira (R$)
+      const formatoMoeda = {
+        style: 'currency',
+        currency: 'BRL',
+      };
+
+      document.getElementById('total-receitas').textContent = totalReceitas.toLocaleString('pt-BR', formatoMoeda);
+      document.getElementById('total-despesas').textContent = totalDespesas.toLocaleString('pt-BR', formatoMoeda);
+    }
+
+    // Listener para o campo de seleção de data
+    document.getElementById('dataSelecionada').addEventListener('change', async (event) => {
+      await atualizarTotais();
+    });
+
+    // Inicializa os totais ao carregar a página
+    document.addEventListener("DOMContentLoaded", async () => {
+      await atualizarTotais();
     });
 
 });
