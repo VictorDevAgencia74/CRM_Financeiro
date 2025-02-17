@@ -29,13 +29,13 @@
             <div class="container-fluid d-flex flex-column p-0">
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#addTransations"><i class="far fa-edit"></i><span style="color: var(--bs-btn-hover-color); background-color: var(--bs-btn-hover-bg);">Add Transação</span></button></li>
-                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#addCategorias"><i class="far fa-list-alt"></i><span style="color: var(--bs-btn-hover-color); background-color: var(--bs-btn-hover-bg);">Add Categoria</span></button></li>
-                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#addBanks"><i class="far fa-building"></i><span style="color: var(--bs-btn-hover-color); background-color: var(--bs-btn-hover-bg);">Add&nbsp; Banco</span></button></li>
-                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><a class="btn btn-dark" role="button" href="transacoesList.html"><i class="far fa-file-alt"></i>List. Transação</a></li>
-                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><a class="btn btn-dark" role="button" href="index.html"><i class="far fa-arrow-alt-circle-left"></i>Desh. Inicial</a></li>
+                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#addTransations"><i class="far fa-edit"></i>Transações</button></li>
+                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#addCategorias"><i class="far fa-list-alt"></i>Categorias</button></li>
+                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#addBanks"><i class="far fa-building"></i>Bancos</button></li>
+                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><a class="btn btn-dark" role="button" href="transacoesList.html"><i class="far fa-file-alt"></i>Detalhado</a></li>
+                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><a class="btn btn-dark" role="button" href="index.html"><i class="far fa-arrow-alt-circle-left"></i>Início</a></li>
                     <li class="nav-item container-nav">
-                        <form><input class="form-control" id="dataSelecionada" type="date"></form>
+                        <form><input class="form-control form-control-lg" id="dataSelecionada" type="date"></form>
                     </li>
                 </ul>
             </div>
@@ -254,7 +254,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title">Adicione suas transações!</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                                <h4 class="modal-title">Adicionar Transações.</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                             </div>
                             <div class="modal-body">
                                 <form id="form-transacao">
@@ -270,7 +270,7 @@
                                             </select></div>
                                     </div>
                                     <div class="dados-form"><label class="form-label">Categoria</label><select class="form-select" id="category-select"></select></div>
-                                    <div class="modal_button"><button class="btn btn-primary" type="submit">Enviar formulário para o Banco de Dados</button></div>
+                                    <div class="modal_button"><button class="btn btn-primary" type="submit">SALVAR TRANSAÇÃO</button></div>
                                 </form>
                             </div>
                             <div class="modal-footer"><button class="btn btn-light" id="btn-close" type="button" data-bs-dismiss="modal">Close</button></div>
@@ -281,7 +281,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title">Aqui adicione suas categorias!</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                                <h4 class="modal-title">Criar Categoria.</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                             </div>
                             <div class="modal-body">
                                 <form id="form-categories">
@@ -291,32 +291,32 @@
                                             <option value="receita">Receita</option>
                                             <option value="despesa">Despesa</option>
                                         </select></div>
-                                    <div class="modal_button"><button class="btn btn-primary" id="btn-close-categories" type="submit">Enviar formulário para o Banco de Dados</button></div>
+                                    <div class="modal_button"><button class="btn btn-primary" id="btn-close-categories" type="submit">SALVAR CATEGORIA</button></div>
                                 </form>
                             </div>
                             <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal fade" role="dialog" tabindex="-1" id="addBanks">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Aqui Adicione seus Bancos Financeiros!</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                <div class="modal fade" role="dialog" tabindex="-1" id="addBanks">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Adicionar Banco.</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="form-banks">
+                                    <div class="dados-form"><label class="form-label">Instituição Financeira:</label><input class="form-control" type="text" id="bank-name"></div>
+                                    <div class="dados-form"><label class="form-label">Balanço</label><input class="form-control" type="number" id="bank-balance"></div>
+                                    <div class="d-flex justify-content-between dados-form">
+                                        <div><label class="form-label">Número da Conta:</label><input class="form-control" type="text" id="bank-account"></div>
+                                        <div><label class="form-label">Agencia:</label><input class="form-control" type="text" id="bank-agency"></div>
+                                    </div>
+                                    <div class="modal_button"><button class="btn btn-primary" type="submit">SALVAR BANCO</button></div>
+                                </form>
+                            </div>
+                            <div class="modal-footer"><button class="btn btn-light" id="btn-close-bank" type="button" data-bs-dismiss="modal">Close</button></div>
                         </div>
-                        <div class="modal-body">
-                            <form id="form-banks">
-                                <div class="dados-form"><label class="form-label">Instituição Financeira:</label><input class="form-control" type="text" id="bank-name"></div>
-                                <div class="dados-form"><label class="form-label">Balanço</label><input class="form-control" type="number" id="bank-balance"></div>
-                                <div class="d-flex justify-content-between dados-form">
-                                    <div><label class="form-label">Número da Conta:</label><input class="form-control" type="text" id="bank-account"></div>
-                                    <div><label class="form-label">Agencia:</label><input class="form-control" type="text" id="bank-agency"></div>
-                                </div>
-                                <div class="modal_button"><button class="btn btn-primary" type="submit">Enviar formulário para o Banco de Dados</button></div>
-                            </form>
-                        </div>
-                        <div class="modal-footer"><button class="btn btn-light" id="btn-close-bank" type="button" data-bs-dismiss="modal">Close</button></div>
                     </div>
                 </div>
             </div>

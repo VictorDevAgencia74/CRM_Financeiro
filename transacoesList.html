@@ -21,13 +21,13 @@
             <div class="container-fluid d-flex flex-column p-0">
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#addTransations"><i class="far fa-edit"></i><span style="color: var(--bs-btn-hover-color); background-color: var(--bs-btn-hover-bg);">Add Transação</span></button></li>
-                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#addCategorias"><i class="far fa-list-alt"></i><span style="color: var(--bs-btn-hover-color); background-color: var(--bs-btn-hover-bg);">Add Categoria</span></button></li>
-                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#addBanks"><i class="far fa-building"></i><span style="color: var(--bs-btn-hover-color); background-color: var(--bs-btn-hover-bg);">Add&nbsp; Banco</span></button></li>
-                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><a class="btn btn-dark" role="button" href="transacoesList.html"><i class="far fa-file-alt"></i>List. Transação</a></li>
-                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><a class="btn btn-dark" role="button" href="index.html"><i class="far fa-arrow-alt-circle-left"></i>Desh. Inicial</a></li>
+                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#addTransations"><i class="far fa-edit"></i>Transações</button></li>
+                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#addCategorias"><i class="far fa-list-alt"></i>Categorias</button></li>
+                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#addBanks"><i class="far fa-building"></i>Bancos</button></li>
+                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><a class="btn btn-dark" role="button" href="transacoesList.html"><i class="far fa-file-alt"></i>Detalhado</a></li>
+                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><a class="btn btn-dark" role="button" href="index.html"><i class="far fa-arrow-alt-circle-left"></i>Início</a></li>
                     <li class="nav-item container-nav">
-                        <form><input class="form-control" type="date" id="dataSelecionada"></form>
+                        <form><input class="form-control form-control-lg" type="date" id="dataSelecionada"></form>
                     </li>
                 </ul>
             </div>
@@ -123,8 +123,8 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <div class="table-responsive">
-                                <table class="table">
+                            <div class="table-responsive text-nowrap">
+                                <table class="table table-striped table-hover">
                                     <thead>
                                         <tr>
                                             <th>Data</th>

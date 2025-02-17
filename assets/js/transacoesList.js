@@ -383,7 +383,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     async function fetchTransactions() {
         let { data, error } = await supabase
             .from("transactions")
-            .select("id, date, type, amount, bank_id, category_id, description");
+            .select("date, type, amount, bank_id, category_id, description");
 
         if (error) {
             console.error("Erro ao buscar transações:", error);
@@ -402,8 +402,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <td>${transaction.category_id || "N/A"}</td>
                 <td>${transaction.description || "Sem descrição"}</td>
                 <td>
-                    <button onclick="editTransaction(${transaction.id})">✏️ Editar</button>
-                    <button onclick="confirmDelete(${transaction.id})">🗑️ Excluir</button>
+                    <button onclick="editTransaction(${transaction.id})">✏️ </button>
+                    <button onclick="confirmDelete(${transaction.id})">🗑️ </button>
                 </td>
             </tr>`;
             tableBody.innerHTML += row;
