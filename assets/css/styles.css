@@ -15,6 +15,16 @@
 
 /* MENU LATERAL */
 
+.title_menu_lateral {
+  width: 100%;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
+  font-style: italic;
+  font-weight: bold;
+  border-bottom: 2px solid #5e7fde ;
+}
+
 .dados-form {
   margin-top: 1.1rem;
 }
@@ -46,6 +56,15 @@
 /* MENU LATERAL */
 
 @media (max-width: 767px) {
+  #accordionSidebar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px 0px 10px;
+  }
+}
+
+@media (max-width: 767px) {
   #accordionSidebar .btn, .btn-group {
     width: 100%;
     display: flex;
@@ -53,6 +72,18 @@
     align-items: center;
     text-align: center;
     font-size: 13px;
+  }
+}
+
+@media (max-width: 767px) {
+  .title_menu_lateral .spanDois {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  #accordionSidebar .btnAdicionar {
+    border-radius: 05px;
   }
 }
 
