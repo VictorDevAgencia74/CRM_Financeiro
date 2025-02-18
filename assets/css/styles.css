@@ -24,17 +24,21 @@
 }
 
 .container-nav i {
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 #accordionSidebar {
-  padding: 0px 4px 0px 4px;
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
-#accordionSidebar .btn {
-  width: 100%;
+#accordionSidebar .btn, .btn-group {
+  width: 170px;
   text-align: left;
+}
+
+#dataSelecionada {
+  width: 100%;
+  font-size: 15px;
 }
 
 /* MEDIA QUERIES */
@@ -42,7 +46,7 @@
 /* MENU LATERAL */
 
 @media (max-width: 767px) {
-  #accordionSidebar .btn {
+  #accordionSidebar .btn, .btn-group {
     width: 100%;
     display: flex;
     flex-direction: column;

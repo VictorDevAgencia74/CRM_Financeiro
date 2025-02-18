@@ -29,11 +29,13 @@
             <div class="container-fluid d-flex flex-column p-0">
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#addTransations"><i class="far fa-edit"></i>Transações</button></li>
-                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#addCategorias"><i class="far fa-list-alt"></i>Categorias</button></li>
-                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><button class="btn btn-dark" type="button" data-bs-toggle="modal" data-bs-target="#addBanks"><i class="far fa-building"></i>Bancos</button></li>
                     <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><a class="btn btn-dark" role="button" href="transacoesList.html"><i class="far fa-file-alt"></i>Detalhado</a></li>
                     <li class="nav-item d-sm-flex justify-content-sm-center container-nav"><a class="btn btn-dark" role="button" href="index.html"><i class="far fa-arrow-alt-circle-left"></i>Início</a></li>
+                    <li class="nav-item d-sm-flex justify-content-sm-center container-nav">
+                        <div class="btn-group bg-primary"><button class="btn btn-dark" type="button">Adicionar</button><button class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" type="button"></button>
+                            <div class="dropdown-menu"><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addTransations">Transações</a><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addCategorias">Categorias</a><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#addBanks">Bancos</a></div>
+                        </div>
+                    </li>
                     <li class="nav-item container-nav">
                         <form><input class="form-control form-control-lg" id="dataSelecionada" type="date" oninput="atualizarTotais()"></form>
                     </li>

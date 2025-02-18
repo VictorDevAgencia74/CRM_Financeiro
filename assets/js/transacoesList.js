@@ -383,7 +383,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     async function fetchTransactions() {
         let { data, error } = await supabase
             .from("transactions")
-            .select("date, type, amount, bank_id, category_id, description");
+            .select("id, date, type, amount, bank_id, category_id, description");
 
         if (error) {
             console.error("Erro ao buscar transações:", error);
